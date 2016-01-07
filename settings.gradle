@@ -1,0 +1,8 @@
+rootProject.name = 'async'
+
+include 'platform'
+include 'broker-activemq'
+include 'example-uberapp'
+include 'example-service'
+include 'example-webapp'
+
