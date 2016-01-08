@@ -72,18 +72,6 @@ project(':broker-activemq') {
 }
 
 
-project(':example-uberapp') {
-    apply plugin: 'spring-boot'
-
-    dependencies {
-        compile group: 'org.codehaus.groovy', name: 'groovy-all', version: groovyVersion
-        compile project(':platform')
-
-        testCompile group: 'junit', name: 'junit', version: junitVersion
-    }
-}
-
-
 project(':example-service') {
     apply plugin: 'spring-boot'
 
