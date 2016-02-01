@@ -1,7 +1,13 @@
-rootProject.name = 'async'
+rootProject.name = 'agilemicroservices-platform'
 
 include 'platform'
+include 'service'
 include 'broker-activemq'
+
+include 'java2js'
+include 'java2js-servlet'
+
 include 'example-service'
 include 'example-webapp'
+include 'example-server'
 

@@ -19,7 +19,7 @@
             stompClient.connect({}, function(frame) {
                 setConnected(true);
                 console.log('Connected: ' + frame);
-                stompClient.subscribe('/queue/app/goodbye', function(greeting){
+                stompClient.subscribe('/queue/goodbye', function(greeting){
                     showGreeting(JSON.parse(greeting.body).content);
                 });
             });
@@ -35,7 +35,7 @@
 
         function sendName() {
             var name = document.getElementById('name').value;
-            stompClient.send('/queue/app/hello', {'JMSReplyTo': 'app/goodbye'}, JSON.stringify({ 'name': name }));
+            stompClient.send('/queue/exampleservice_execute', {'JMSReplyTo': 'goodbye'}, JSON.stringify({ 'name': name }));
         }
 
         function showGreeting(message) {

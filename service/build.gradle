@@ -1,12 +1,10 @@
-apply plugin: 'spring-boot'
 
 dependencies {
     compile group: 'org.codehaus.groovy', name: 'groovy-all', version: groovyVersion
     compile project(':platform')
-    compile(project(':java2js-servlet')) {
-        exclude module: 'servlet-api'
-    }
-    compile project(':example-service')
+
+    compile("org.apache.camel:camel-core:${camelVersion}")
+    compile("org.apache.camel:camel-jackson:${camelVersion}")
 
     testCompile group: 'junit', name: 'junit', version: junitVersion
 }

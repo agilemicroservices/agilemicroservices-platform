@@ -1,12 +1,13 @@
 apply plugin: 'spring-boot'
 
+
 dependencies {
     compile group: 'org.codehaus.groovy', name: 'groovy-all', version: groovyVersion
-    compile project(':platform')
-    compile(project(':java2js-servlet')) {
-        exclude module: 'servlet-api'
-    }
     compile project(':example-service')
+
+    compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: '5.0.7.Final'
+    compile("org.apache.camel:camel-spring-boot:${camelVersion}")
+    compile("org.apache.activemq:activemq-camel:${activeMqVersion}")
 
     testCompile group: 'junit', name: 'junit', version: junitVersion
 }

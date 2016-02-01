@@ -1,0 +1,39 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url 'http://corclearing.artifactoryonline.com/corclearing/third-party' }
+    }
+    dependencies {
+        classpath "io.github.divinespear:jpa-schema-gradle-plugin:+"
+        classpath "com.microsoft:sqljdbc4:+"
+    }
+}
+
+
+apply plugin: "jpa-schema-generate"
+
+
+sourceSets {
+    main {
+        // set output to same directories
+        // jpa implementations always scan classes using classpath that found persistence.xml
+        output.resourcesDir = output.classesDir
+    }
+}
+
+
+// generates schema using the jpa-schema-generate plug-in
+generateSchema {
+    format true
+    dialect 'org.hibernate.dialect.SQLServer2008Dialect'
+    scriptAction 'create'
+}
+
+dependencies {
+    compile group: 'org.codehaus.groovy', name: 'groovy-all', version: groovyVersion
+    compile project(':service')
+
+    compile group: 'org.hibernate', name: 'hibernate-entitymanager', version: hibernateVersion
+
+    testCompile group: 'junit', name: 'junit', version: junitVersion
+}
