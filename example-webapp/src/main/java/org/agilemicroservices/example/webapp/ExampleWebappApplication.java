@@ -15,7 +15,7 @@ public class ExampleWebappApplication {
     public ServletRegistrationBean codeGenerationServlet()
     {
         ServletRegistrationBean bean = new ServletRegistrationBean(new Java2JsServlet(), "/domain.js");
-        bean.addInitParameter(Java2JsServlet.ALLOWED_PACKAGE_NAMES_PARAM, "org.agilemicroservices,org.agilemicroservices.example.domain");
+        bean.addInitParameter(Java2JsServlet.ALLOWED_PACKAGE_NAMES_PARAM, "org.agilemicroservices.example.domain");
         return bean;
     }
 

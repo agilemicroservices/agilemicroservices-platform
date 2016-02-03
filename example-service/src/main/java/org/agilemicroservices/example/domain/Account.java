@@ -9,6 +9,6 @@ public class Account
     public long accountId;
     public String accountNumber;
     public Member owner;
-    private BigDecimal buyingPower;
-    private Date creationDate;
+    public BigDecimal buyingPower;
+    public Date creationDate;
 }

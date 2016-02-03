@@ -89,7 +89,12 @@ public class NamespaceModel
     // TODO only class is needed, eliminate other arguments
     public TypeModel newType(String typeName, String packageName, Class<?> clazz, TypeModel superclassModel)
     {
-        TypeModel typeModel = new TypeModel(typeName, packageName, clazz, superclassModel);
+        return newType(typeName, packageName, clazz, superclassModel, false);
+    }
+
+    public TypeModel newType(String typeName, String packageName, Class<?> clazz, TypeModel superclassModel, boolean builtIn)
+    {
+        TypeModel typeModel = new TypeModel(typeName, packageName, clazz, superclassModel, builtIn);
         String qualifiedName = QualifiedName.format(typeName, packageName);
         qualifiedNameToTypeModelMap.put(qualifiedName, typeModel);
         return typeModel;

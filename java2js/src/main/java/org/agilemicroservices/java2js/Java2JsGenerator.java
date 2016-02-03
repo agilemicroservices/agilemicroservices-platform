@@ -144,9 +144,9 @@ public class Java2JsGenerator
 
             if (beanClass.isArray())
             {
-                // TODO mark as built-in, not built-in
-                typeModel = namespaceModel.newType(beanClass.getSimpleName(), null, beanClass, superclassModel);
-                buildType(beanClass.getComponentType());
+                TypeModel componentType = buildType(beanClass.getComponentType());
+                typeModel = namespaceModel.newType(beanClass.getSimpleName(), null, beanClass, superclassModel,
+                                                   componentType.isBuiltIn());
             }
             else
             {
