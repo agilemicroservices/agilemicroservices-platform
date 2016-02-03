@@ -1,4 +1,4 @@
-group 'com.corclearing'
+group 'org.agilemicroservices.platform'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'groovy'
@@ -30,17 +30,29 @@ ext {
 
 
 subprojects {
+    group 'org.agilemicroservices.platform'
+    version '1.0-SNAPSHOT'
+
     apply plugin: 'groovy'
     apply plugin: 'java'
     apply plugin: 'idea'
+    apply plugin: 'maven-publish'
 
     repositories {
         mavenLocal()
         mavenCentral()
     }
+
+    publishing {
+        publications {
+            maven(MavenPublication) {
+                from components.java
+            }
+        }
+    }
 }
 
 
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.9'
+    gradleVersion = '2.10'
 }
