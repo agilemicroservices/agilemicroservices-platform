@@ -1,11 +1,13 @@
 package org.agilemicroservices.example.domain;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 
 
 @Entity
 @Access(AccessType.FIELD)
 @Table(name = "hello")
+@XmlRootElement
 public class HelloMessage
 {
     @Id

@@ -13,6 +13,7 @@ import org.springframework.core.type.classreading.MetadataReader;
 import org.springframework.core.type.classreading.MetadataReaderFactory;
 import org.springframework.util.ClassUtils;
 
+import javax.xml.bind.annotation.XmlRootElement;
 import java.beans.PropertyDescriptor;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -109,7 +110,10 @@ public class Java2JsGenerator
                         try
                         {
                             Class<?> clazz = Class.forName(metadataReader.getClassMetadata().getClassName());
-                            classes.add(clazz);
+                            if (clazz.isAnnotationPresent(XmlRootElement.class))
+                            {
+                                classes.add(clazz);
+                            }
                         }
                         catch (ClassNotFoundException e)
                         {
