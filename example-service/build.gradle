@@ -4,7 +4,7 @@ buildscript {
         maven { url 'http://corclearing.artifactoryonline.com/corclearing/third-party' }
     }
     dependencies {
-        classpath "io.github.divinespear:jpa-schema-gradle-plugin:+"
+        classpath "io.github.divinespear:jpa-schema-gradle-plugin:0.1.12-1"
         classpath "com.microsoft:sqljdbc4:+"
     }
 }
