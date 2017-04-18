@@ -11,14 +11,14 @@ import java.io.PrintWriter;
  * <code>Main</code> implements the command line interface for <code>java2js</code>.
  * <p>
  * The following example illustrates basic usage.  The <code>myclasses</code>, <code>com.mypackage</code>,
- * <code>com.anotherpackage</code>, <code>jspackage</code> and </code>domain.js</code> should be replaced with
+ * <code>com.anotherpackage</code>, <code>jspackage</code> and <code>domain.js</code> should be replaced with
  * application specific values.
  *
- * <code>
  * <pre>
+ * <code>
  * java -cp "java2js.jar:myclasses" org.agilemicroservices.java2js.Main -i com.mypackage -i com.anotherpackage -o jspackage domain.js
- * </pre>
  * </code>
+ * </pre>
  */
 public class Main
 {

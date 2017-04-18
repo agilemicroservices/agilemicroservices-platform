@@ -8,7 +8,7 @@ public class ActiveMQServerProperties {
     private boolean isPersistent;
     @Value("${activemq.datadir:/tmp/activemq-data}")
     private String dataDirectory;
-    @Value("${activemq.broker-urls:ws://0.0.0.0:8188,tcp://localhost:61613}")
+    @Value("${activemq.broker-urls:ws://0.0.0.0:8188?websocket.maxIdleTime=7200000,tcp://localhost:61613}")
     private String[] brokerUrls;
 
     public boolean isPersistent() {

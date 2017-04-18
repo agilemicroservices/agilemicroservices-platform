@@ -41,6 +41,7 @@ public class Java2JsGenerator
      *
      * @param inputPackageNames the input package(s) containing the classes to generated code from.
      *                          names.
+     * @param emitter the emitter to use for building output.
      * @throws NullPointerException if input packages is <code>null</code>.
      * @see #generate(String)
      * @see #generate(PrintWriter)
@@ -76,7 +77,7 @@ public class Java2JsGenerator
     /**
      * Generates a stream of JavaScript from the configured input and output packages.
      *
-     * @param writer
+     * @param writer the writer to write the output to.
      * @throws IOException if thrown by the writer.
      */
     public void generate(PrintWriter writer) throws IOException

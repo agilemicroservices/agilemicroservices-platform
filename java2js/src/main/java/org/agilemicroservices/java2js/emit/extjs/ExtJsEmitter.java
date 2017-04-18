@@ -57,7 +57,6 @@ public class ExtJsEmitter implements Emitter
     /**
      * Creates an initialized instance ready to emit code.
      *
-     * @param writer            the write used to generate output.
      * @param outputPackageName the destination package for generated code, or <code>null</code> to use the Java package
      *                          names.
      */
